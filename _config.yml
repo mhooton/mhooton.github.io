@@ -23,13 +23,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Dr Matthew Hooton"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "Exoplanets"
+  location         : #URL
+  employer         : "University of Cambridge"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "mh2143 [AT] cam [DOT] ac [DOT] uk"
 
   # Academic websites
   academia         : # URL

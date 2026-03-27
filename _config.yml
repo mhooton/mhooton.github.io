@@ -13,9 +13,9 @@ title: "Dr Matthew Hooton"
 title_separator          : "-"
 name: "Dr Matthew Hooton"
 description: "Exoplanet researcher and educator at the University of Cambridge"
-url: "https://www.drmatthewhooton.com"
+url: "https://drmatthewhooton.com"
 baseurl: ""
-repository               : "academicpages/academicpages.github.io"
+repository               : "mhooton/mhooton.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.

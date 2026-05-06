@@ -17,7 +17,7 @@ author_profile: true
       {% endif %}
       {% unless title_shown %}
         <h2>{{ category[1].title }}</h2><hr />
-        <p>My full published works can be accessed on <a href="https://ui.adsabs.harvard.edu/search/filter_database_fq_database=NOT&filter_database_fq_database=*%3A*&filter_database_fq_database=database%3A%22earthscience%22&filter_property_fq_property=AND&filter_property_fq_property=property%3A%22refereed%22&fq=%7B!type%3Daqp%20v%3D%24fq_property%7D&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(*%3A*%20NOT%20database%3A%22earthscience%22)&fq_property=(property%3A%22refereed%22)&q=%20author%3A%22hooton%2C%20m.j.%22&sort=date%20desc%2C%20bibcode%20desc&p_=0">ADS</a>.</p>
+        <p>My full published works can be accessed on <a href="https://ui.adsabs.harvard.edu/search/filter_database_fq_database=NOT&filter_database_fq_database=*%3A*&filter_database_fq_database=database%3A%22earthscience%22&filter_property_fq_property=AND&filter_property_fq_property=property%3A%22refereed%22&fq=%7B!type%3Daqp%20v%3D%24fq_property%7D&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(*%3A*%20NOT%20database%3A%22earthscience%22)&fq_property=(property%3A%22refereed%22)&q=%20author%3A%22hooton%2C%20m.j.%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener noreferrer">ADS</a>.</p>
         {% assign title_shown = true %}
       {% endunless %}
       {% include archive-single.html %}

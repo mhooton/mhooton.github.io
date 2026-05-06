@@ -10,6 +10,8 @@
 main:
   - title: "About"
     url: /
+  - title: "Research"
+    url: /research/
   - title: "Discover a New Exoplanet"
     url: /teaching/
   - title: "Publications"

@@ -7,22 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-I am a postdoctoral researcher at the Cavendish Laboratory, University of 
-Cambridge, where I work within the group of Nobel laureate Didier Queloz. 
-My research focuses on the detection and characterisation of exoplanets — 
-planets orbiting stars beyond our own solar system — with a particular 
-emphasis on atmospheric properties and transit photometry.
+I am a postdoctoral research associate within Nobel Prize laureate Prof. Didier Queloz's research group at the Cavendish Laboratory at the University of Cambridge. I obtained my undergraduate degree in Physics from the University of Warwick, with my Master's thesis measuring B meson decay branching fractions using data from the Large Hadron Collider. I obtained my PhD from Queen's University Belfast (QUB), where I designed and coordinated the QUB secondary eclipse programme to characterise the atmospheres of hot Jupiters using ground-based photometry. Following that, I was a CHEOPS postdoctoral fellow at the University of Bern in Switzerland where I coordinated the largest programme on the CHEOPS space telescope (see description below), to refine the radii of systems of multiple small transiting exoplanets.
 
-I completed my PhD in exoplanet atmospheres at Queen's University Belfast, 
-and my MPhys in Physics at the University of Warwick. Since joining Cambridge 
-in 2022, I have contributed to over 125 published research papers, accumulating 
-nearly 1,900 citations.
-
-Alongside my research, I design and deliver a small number of bespoke 
-educational courses in exoplanet science, aimed at motivated students who 
-want genuine exposure to how modern astrophysics research is done. 
-[Find out more](/teaching/).
-
----
-
-*For academic enquiries, please use the contact form below.*
+My [Research](/research/) page describes my current and past research interests, spanning the migration and atmospheres of hot Jupiters, the dynamical history of multi-planet systems, and my involvement with the SPECULOOS and CHEOPS space missions. If you are a student or parent interested in gaining authentic research experience in exoplanet science, my [Discover a New Exoplanet](/teaching/) programme offers a bespoke one-to-one research course designed and delivered by me. A selection of my published works — including papers in Nature, Nature Astronomy, and Science — can be found on my [Publications](/publications/) page. For any enquiries, please visit my [Contact](/contact/) page.

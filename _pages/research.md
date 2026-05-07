@@ -28,8 +28,8 @@ A novel way to make a measurement of Ψ involves observing the transits of hot, 
 In 2021, I was part of the team that discovered six terrestrial planets orbiting the nearby star TOI-178, five of which are in a chain of Laplace resonance. This rare configuration — observed in a handful of systems such as TRAPPIST-1 and the Galilean moons of Jupiter — guarantees dynamical stability over billions of years, all the way back to the very formation of the system. I will shortly be publishing the results of my JWST/NIRSpec observations of three planets in the system, with the aim of diagnosing whether they formed in situ or migrated to their current positions with respect to different molecular snow lines — the distances from the star at which different molecules freeze out. This would be achieved by constraining the abundances of key molecules in their atmospheres, including water, carbon monoxide, and carbon dioxide, whose relative proportions carry the fingerprints of where and how the planets formed.
 
 <figure style="width: 100%; margin-top: 1em; margin-bottom: 1em;">
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/-WevvRG9ysY?si=9EOFrYCbNi4a2-XG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div style="width: 100%; aspect-ratio: 16/9;">
+    <iframe style="width: 100%; height: 100%;" src="https://www.youtube.com/embed/-WevvRG9ysY?si=9EOFrYCbNi4a2-XG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
   <figcaption style="font-size: 0.85em; color: #666;">An idealised visualisation demonstrating the occurrences of resonances in the TOI-178 system. Source: ESO.</figcaption>
 </figure>
@@ -74,7 +74,7 @@ I have led the analysis of CHEOPS observations published in many papers, in part
 
 <figure style="float: right; width: 33%; margin-left: 1.5em; margin-bottom: 1em;">
   <a href="/images/research_qub.png" target="_blank" rel="noopener noreferrer">
-    <img src="/images/research_qub.png" style="width: 100%;">
+    <img src="/images/research_qub.jpg" style="width: 100%;">
   </a>
   <figcaption style="font-size: 0.85em; color: #666;">A summary of the planets observed in the QUB secondary eclipse campaign and the telescopes used. Credit: Matthew Hooton.</figcaption>
 </figure>

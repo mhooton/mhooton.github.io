@@ -13,7 +13,9 @@ Alongside the eccentricity, each perturbing mechanism has its own distinct impac
 A novel way to make a measurement of Ψ involves observing the transits of hot, early-type stars. In a phenomenon known as gravity darkening, the rapid rotation that these stars commonly exhibit causes their equators to bulge, making them cooler and less luminous than the stellar poles. This breaks the approximate radial symmetry of the stellar disk that we observe for later-type stars, meaning that the transit light curves exhibiting gravity darkening directly encode the value of Ψ, which is generally eluded by other methods to quantify the stellar obliquity. Unfortunately, the complexity of the models needed to fit these subtle brightness variations mean that the measurement of Ψ is highly sensitive to systematics, as well as subtle differences in the models and fitting methods.
 
 <figure style="width: 100%; margin-top: 1em; margin-bottom: 1em;">
-  <img src="/images/research_uhj.png" style="width: 100%;">
+  <a href="/images/research_uhj.png" target="_blank" rel="noopener noreferrer">
+    <img src="/images/research_uhj.png" style="width: 100%;">
+  </a>
   <figcaption style="font-size: 0.85em; color: #666;">Examples of transit light curves of a rapidly rotating star with the observer in the plane of the stellar equator. Source: Barnes 2009.</figcaption>
 </figure>
 
@@ -37,7 +39,9 @@ In 2021, I was part of the team that discovered six terrestrial planets orbiting
 ## SPECULOOS
 
 <figure style="float: right; width: 33%; margin-left: 1.5em; margin-bottom: 1em;">
-  <img src="/images/research_speculoos.png" style="width: 100%;">
+  <a href="/images/research_speculoos.png" target="_blank" rel="noopener noreferrer">
+    <img src="/images/research_speculoos.png" style="width: 100%;">
+  </a>
   <figcaption style="font-size: 0.85em; color: #666;">Three of the four telescopes at SPECULOOS South Observatory. Credit: Matthew Hooton.</figcaption>
 </figure>
 
@@ -52,7 +56,9 @@ I support the SPECULOOS mission by developing the reduction and analysis pipelin
 ## CHEOPS
 
 <figure style="float: right; width: 33%; margin-left: 1.5em; margin-bottom: 1em;">
-  <img src="/images/research_cheops.jpg" style="width: 100%;">
+  <a href="/images/research_cheops.png" target="_blank" rel="noopener noreferrer">
+    <img src="/images/research_cheops.png" style="width: 100%;">
+  </a>
   <figcaption style="font-size: 0.85em; color: #666;">The CHEOPS satellite. Source: ESA.</figcaption>
 </figure>
 
@@ -67,7 +73,9 @@ I have led the analysis of CHEOPS observations published in many papers, in part
 ## The QUB secondary eclipse campaign
 
 <figure style="float: right; width: 33%; margin-left: 1.5em; margin-bottom: 1em;">
-  <img src="/images/research_qub.png" style="width: 100%;">
+  <a href="/images/research_qub.png" target="_blank" rel="noopener noreferrer">
+    <img src="/images/research_qub.png" style="width: 100%;">
+  </a>
   <figcaption style="font-size: 0.85em; color: #666;">A summary of the planets observed in the QUB secondary eclipse campaign and the telescopes used. Credit: Matthew Hooton.</figcaption>
 </figure>
 

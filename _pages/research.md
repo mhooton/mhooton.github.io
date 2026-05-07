@@ -56,8 +56,8 @@ I support the SPECULOOS mission by developing the reduction and analysis pipelin
 ## CHEOPS
 
 <figure style="float: right; width: 33%; margin-left: 1.5em; margin-bottom: 1em;">
-  <a href="/images/research_cheops.png" target="_blank" rel="noopener noreferrer">
-    <img src="/images/research_cheops.png" style="width: 100%;">
+  <a href="/images/research_cheops.jpg" target="_blank" rel="noopener noreferrer">
+    <img src="/images/research_cheops.jpg" style="width: 100%;">
   </a>
   <figcaption style="font-size: 0.85em; color: #666;">The CHEOPS satellite. Source: ESA.</figcaption>
 </figure>
@@ -74,7 +74,7 @@ I have led the analysis of CHEOPS observations published in many papers, in part
 
 <figure style="float: right; width: 33%; margin-left: 1.5em; margin-bottom: 1em;">
   <a href="/images/research_qub.png" target="_blank" rel="noopener noreferrer">
-    <img src="/images/research_qub.jpg" style="width: 100%;">
+    <img src="/images/research_qub.png" style="width: 100%;">
   </a>
   <figcaption style="font-size: 0.85em; color: #666;">A summary of the planets observed in the QUB secondary eclipse campaign and the telescopes used. Credit: Matthew Hooton.</figcaption>
 </figure>

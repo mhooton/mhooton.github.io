@@ -1,0 +1,280 @@
+---
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import EnquiryForm from '../components/EnquiryForm.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+import intAboveClouds from '../assets/photos/int-above-clouds.jpg';
+import talk from '../assets/photos/talk-exoplanets5.jpg';
+import notebook from '../assets/figures/mentorship-colab.png';
+
+// The page's title, description and link preview never mention the university.
+const title = 'Exoplanet Research Mentorship · Dr Matthew Hooton';
+const description =
+  'A 14-session online research course in which a school student looks for an unconfirmed planet in NASA TESS data and writes it up as a paper. Designed and taught by Dr Matthew Hooton.';
+---
+
+<Base
+  title={title}
+  description={description}
+  ogImage="/og/mentorship.jpg"
+  ogImageAlt="The Isaac Newton Telescope above the clouds at sunset, with the words Exoplanet Research Mentorship"
+  footer="mentorship"
+>
+  <div class="m-hero">
+    <div class="m-hero-media">
+      <Picture
+        src={intAboveClouds}
+        alt="The Isaac Newton Telescope's dome above a sea of clouds at sunset on La Palma"
+        formats={['avif', 'webp']}
+        widths={[640, 960, 1280, 1600, 2000, 2400]}
+        sizes="100vw"
+        priority
+      />
+    </div>
+    <div class="m-hero-text">
+      <div class="wrap">
+        <p class="eyebrow">Exoplanet Research Mentorship</p>
+        <h1>Discover a New Exoplanet</h1>
+        <p class="lead">
+          An independent online research course in which a student looks for an unconfirmed planet
+          in real NASA data, and writes up what they find as a research paper.
+        </p>
+        <p class="by">Designed and taught by Dr Matthew Hooton, exoplanet astronomer.</p>
+        <a class="btn" href="#enquire">Enquire</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="credit">
+      Photograph: the Isaac Newton Telescope above the clouds, La Palma, by Matthew Hooton.
+    </p>
+    <nav class="subnav" aria-label="On this page">
+      <a href="#gains">What your student gains</a>
+      <a href="#student-work">Student work</a>
+      <a href="#who-teaches">Who teaches</a>
+      <a href="#course">The course</a>
+      <a href="#practicalities">Practicalities</a>
+      <a href="#enquire">Enquire</a>
+    </nav>
+
+    <section class="block" id="gains" aria-labelledby="gains-h">
+      <h2 id="gains-h">What your student gains</h2>
+      <div class="gains">
+        <article>
+          <h3>Coding</h3>
+          <p>
+            They write their own Python programs and run them on data from a NASA space telescope.
+            Python is the main programming language of astronomy and data science.
+          </p>
+        </article>
+        <article>
+          <h3>Research</h3>
+          <p>
+            They work on a question whose answer nobody yet knows. They learn to rule out false
+            alarms in imperfect data. Above all, they learn to judge how certain a result is, which
+            is the biggest shift between learning science and doing it.
+          </p>
+        </article>
+        <article>
+          <h3>Writing and presenting</h3>
+          <p>
+            Each week they talk me through their results. They write the project up as a research
+            paper in their own name.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="student-work" aria-labelledby="work-h">
+      <h2 id="work-h">Student work</h2>
+      <ul class="outputs">
+        <li>
+          <span class="when">Dec 2026</span>
+          <span class="what">Poster</span>
+          <span class="where">
+            26th Australian Institute of Physics Congress, Sydney ·
+            <a href="https://indico.global/event/16926/contributions/163975/">abstract</a>
+          </span>
+        </li>
+        <li>
+          <span class="when">2026</span>
+          <span class="what">Paper, in revision</span>
+          <span class="where">National High School Journal of Science</span>
+        </li>
+      </ul>
+      <p class="note">Former students have gone on to continue their research with me beyond the course.</p>
+    </section>
+
+    <section class="block" id="who-teaches" aria-labelledby="who-h">
+      <div class="who">
+        <figure>
+          <Picture
+            src={talk}
+            alt="Matthew Hooton presenting JWST results on stage at the Exoplanets 5 conference"
+            formats={['avif', 'webp']}
+            widths={[480, 720, 960, 1280, 1600]}
+            sizes="(max-width: 760px) min(22rem, calc(100vw - 40px)), (max-width: 1152px) 55vw, 620px"
+          />
+          <figcaption class="cap">Presenting JWST results at Exoplanets 5, Leiden, 2024.</figcaption>
+        </figure>
+        <div class="who-text">
+          <h2 id="who-h">Who teaches</h2>
+          <p>
+            I am an exoplanet astronomer at the University of Cambridge, in the group of Nobel
+            laureate Professor Didier Queloz. I develop the data pipeline for the SPECULOOS telescope
+            network, am on the science team of the CHEOPS space telescope, and have published more
+            than 80 papers, including in <i>Nature</i> and <i>Science</i>.
+          </p>
+          <p>
+            I designed this course and teach every session myself, and I take on a small number of
+            students at a time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="why-real" aria-labelledby="why-h">
+      <div class="why">
+        <div class="why-text">
+          <h2 id="why-h">Why this is real research</h2>
+          <p>
+            An exoplanet is a planet that orbits a star other than the Sun. The first was found in
+            the 1990s. Most of the planets known today were found by watching for a small, regular
+            dimming of a star's light as a planet passes in front of it; a graph of the star's
+            brightness over time is called a light curve.
+          </p>
+          <p>
+            Since 2018, TESS has found almost 10,000 such signals. Each one is only a candidate until
+            it has been checked with further observations, because two stars orbiting each other
+            can produce a similar dimming. Fewer than half of these candidates have been checked,
+            because there are not enough astronomers to do it.
+          </p>
+        </div>
+        <figure>
+          <VideoEmbed
+            id="xNeRqbw18Jk"
+            title="ESA animation of a planet passing in front of its star, with the light curve traced out"
+          />
+          <figcaption class="cap">
+            A planet passing in front of its star, with the dip in starlight traced out as a light
+            curve. Source: ESA.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" id="course" aria-labelledby="course-h">
+      <h2 id="course-h">The course</h2>
+      <div class="course">
+        <div class="course-text">
+          <div class="phase">
+            <p class="when">Weeks 1–6</p>
+            <div>
+              <h3>Foundations</h3>
+              <p>
+                How planets are found and measured from the dimming of their stars, what real TESS
+                data looks like, how a planet search works, and how a research paper is written.
+                Taught through interactive notebooks the student runs and changes.
+              </p>
+            </div>
+          </div>
+          <div class="phase">
+            <p class="when">Weeks 7–14</p>
+            <div>
+              <h3>The research</h3>
+              <p>
+                Three stages, each building on the last, with the paper written alongside, section
+                by section.
+              </p>
+              <ol class="steps">
+                <li>
+                  <span class="n">1</span>
+                  <h4 class="s">Search</h4>
+                  <p>
+                    They write their own search program, run it on 20 stars, and narrow the signals
+                    down to two candidates.
+                  </p>
+                </li>
+                <li>
+                  <span class="n">2</span>
+                  <h4 class="s">Check</h4>
+                  <p>
+                    They analyse images from a ground-based telescope to find which star the signal
+                    really comes from.
+                  </p>
+                </li>
+                <li>
+                  <span class="n">3</span>
+                  <h4 class="s">Measure</h4>
+                  <p>
+                    They fit a model to all the data to measure the planet's size and orbit, with
+                    uncertainties.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <figure class="nb">
+          <Picture
+            src={notebook}
+            alt="A course notebook in Google Colab, with Python code and the plot it produces"
+            formats={['webp']}
+            quality={90}
+            widths={[400, 600, 795]}
+            sizes="(max-width: 760px) min(24rem, calc(100vw - 40px)), 360px"
+          />
+          <figcaption class="cap">
+            From a course notebook: how a planet's distance from its star changes the length of its
+            transit. The Python code above makes the plot.
+          </figcaption>
+        </figure>
+      </div>
+      <p class="endline">
+        By the end, the student has their own code, their own analysis, and a paper in their name.
+      </p>
+    </section>
+
+    <section class="block" id="practicalities" aria-labelledby="prac-h">
+      <h2 id="prac-h">Practicalities</h2>
+      <dl class="prac">
+        <dt>Format</dt>
+        <dd>
+          14 one-hour sessions online, one-to-one or in a group of two or three. About 14 weeks
+          alongside school.
+        </dd>
+        <dt>Time</dt>
+        <dd>Students usually spend four to six hours a week on their own work.</dd>
+        <dt>Platform</dt>
+        <dd>Everything runs in Google Colab in a web browser, so there is nothing to install.</dd>
+        <dt>Background</dt>
+        <dd>Basic Python: variables, loops and functions. No scientific programming is needed.</dd>
+        <dt>Who it suits</dt>
+        <dd>
+          Students in their final years of high school or early undergraduate study who are
+          genuinely interested in research and willing to work independently.
+        </dd>
+        <dt>Scheduling</dt>
+        <dd>
+          Sessions are online and arranged around the student's school week, wherever they live.
+          Students have joined from across the United States and from Europe.
+        </dd>
+        <dt>Parents</dt>
+        <dd>
+          Parents can ask for short written progress updates: three during the course, and one at
+          the end, once the student has completed their paper.
+        </dd>
+      </dl>
+    </section>
+
+    <section class="block" id="enquire" aria-labelledby="enq-h">
+      <h2 id="enq-h">Enquire</h2>
+      <p class="form-intro">
+        Fees are available on request. Tell me a little about your student, and I'll reply within
+        48 hours to arrange a short conversation.
+      </p>
+      <EnquiryForm />
+    </section>
+  </div>
+</Base>

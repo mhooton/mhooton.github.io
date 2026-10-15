@@ -1,0 +1,38 @@
+---
+// The general contact form, for research and other messages. Posts to Formspree.
+import FormEnhance from './FormEnhance.astro';
+import { formEndpoint } from '../data/site';
+---
+
+<form
+  class="enq"
+  action={formEndpoint}
+  method="POST"
+  data-enhance
+  data-thanks="Thank you. Your message has been sent."
+>
+  <input type="hidden" name="subject" value="Website message" />
+  <label for="msg-name">
+    Name
+    <input id="msg-name" type="text" name="name" autocomplete="name" required />
+  </label>
+  <label for="msg-email">
+    Email
+    <input id="msg-email" name="email" type="email" autocomplete="email" required />
+  </label>
+  <label class="full" for="msg-message">
+    Message
+    <textarea id="msg-message" name="message" rows="6" required></textarea>
+  </label>
+  <div class="trap">
+    <label for="msg-gotcha">Leave this field empty</label>
+    <input id="msg-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+  </div>
+  <div class="row">
+    <button class="btn" type="submit">Send message</button>
+    <p class="formnote" role="status" data-status></p>
+  </div>
+  <p class="formnote full">The <a href="/privacy/">privacy notice</a> explains how your details are used.</p>
+</form>
+
+<FormEnhance />

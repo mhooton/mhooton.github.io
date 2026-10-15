@@ -1,0 +1,25 @@
+---
+import type { Paper } from '../data/publications';
+
+interface Props {
+  papers: Paper[];
+}
+
+const { papers } = Astro.props;
+---
+
+<ol class="papers">
+  {
+    papers.map((paper) => (
+      <li>
+        <p class="t">
+          <a href={paper.url}>{paper.title}</a>
+        </p>
+        <p class="m">
+          {paper.authors} · <span class="j">{paper.journal}</span> · {paper.year}
+          {paper.firstAuthor && ' · first author'}
+        </p>
+      </li>
+    ))
+  }
+</ol>

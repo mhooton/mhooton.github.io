@@ -1,25 +1,19 @@
-# Ignore the contents of the _site directory and other cache directories
-_site/
-.sass-cache/
+# Build output and Astro's generated types
+dist/
+.astro/
 
-# Ignore the directory for local files during development
-local/
+# Dependencies (package-lock.json is committed: the deploy workflow runs npm ci)
+node_modules/
 
-# Ignore the Gemfile that is generated
-Gemfile.lock
+# Logs and local environment files
+npm-debug.log*
+.env
+.env.*
 
-# Ignore files created by npm
-node_modules
-package-lock.json
-
-# Ignore the vendor file at root level and bundle for alternative installation
-/vendor/
-.bundle/
-
-# Ignore folders related to IDEs
+# macOS and editors
+.DS_Store
+.idea/
 .vscode/
 
-# Ignore files created by MacOS
-.DS_Store
-
-.idea/
+# Local Claude Code tooling
+.claude/

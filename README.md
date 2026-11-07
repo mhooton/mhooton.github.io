@@ -2,7 +2,8 @@
 
 Source of [drmatthewhooton.com](https://drmatthewhooton.com), built with [Astro](https://astro.build).
 Every push to `master` builds the site and deploys it to GitHub Pages
-(`.github/workflows/deploy.yml`).
+(`.github/workflows/deploy.yml`). Pull requests into `master` are built first, as a check
+(`.github/workflows/check.yml`).
 
 ## Working on the site
 

@@ -3,9 +3,9 @@ import { Picture, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import VideoEmbed from '../components/VideoEmbed.astro';
 import uhj from '../assets/figures/research-uhj.png';
-import speculoos from '../assets/figures/research-speculoos.png';
 import cheops from '../assets/figures/research-cheops.jpg';
 import qub from '../assets/figures/research-qub.png';
+import speculoosDusk from '../assets/photos/speculoos-dusk.jpg';
 import whtDome from '../assets/photos/wht-dome-opening.jpg';
 
 // Full-size versions of the two detailed figures, for the "open full size" links.
@@ -174,14 +174,13 @@ const qubFull = await getImage({ src: qub, format: 'webp', quality: 90 });
             of SPIRIT, SPECULOOS's new near-infrared camera.
           </p>
         </div>
-        <figure class="fig fig-small">
+        <figure class="fig">
           <Picture
-            src={speculoos}
-            alt="Three SPECULOOS telescope domes open at dusk"
-            formats={['webp']}
-            quality={90}
-            widths={[320]}
-            sizes="320px"
+            src={speculoosDusk}
+            alt="Three SPECULOOS telescope domes open at dusk in the Atacama Desert"
+            formats={['avif', 'webp']}
+            widths={[480, 720, 960, 1280]}
+            sizes="(max-width: 760px) calc(100vw - 40px), 420px"
           />
           <figcaption class="cap">
             Three of the four telescopes at SPECULOOS South Observatory. Credit: Matthew Hooton.

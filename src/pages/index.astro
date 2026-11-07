@@ -59,7 +59,7 @@ const cards = [
           <a href={profiles.github}>GitHub</a>
         </p>
       </div>
-      <div class="portrait">
+      <figure class="portrait">
         <Picture
           src={portrait}
           alt="Matthew Hooton"
@@ -68,7 +68,8 @@ const cards = [
           sizes="(max-width: 760px) min(20rem, calc(100vw - 40px)), (max-width: 1152px) 34vw, 400px"
           priority
         />
-      </div>
+        <figcaption class="cap">Photograph: Matthew Hooton.</figcaption>
+      </figure>
     </div>
     <div class="sig">
       <TransitStrip />

@@ -18,6 +18,7 @@ const { papers } = Astro.props;
         <p class="m">
           {paper.authors} · <span class="j">{paper.journal}</span> · {paper.year}
           {paper.firstAuthor && ' · first author'}
+          {paper.jointFirstAuthor && ' · joint first author'}
         </p>
       </li>
     ))

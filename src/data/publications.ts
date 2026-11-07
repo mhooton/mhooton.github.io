@@ -9,6 +9,7 @@ export interface Paper {
   year: number;
   url: string;
   firstAuthor?: boolean;
+  jointFirstAuthor?: boolean;
 }
 
 // Papers I led or co-led. The first four also appear on Home.
@@ -28,6 +29,7 @@ export const ledPapers: Paper[] = [
     journal: 'Monthly Notices of the RAS',
     year: 2026,
     url: 'https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f2187F',
+    jointFirstAuthor: true,
   },
   {
     title: 'TOI-2407 b: a warm Neptune in the desert',

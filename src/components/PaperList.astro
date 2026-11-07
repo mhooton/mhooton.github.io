@@ -3,22 +3,33 @@ import type { Paper } from '../data/publications';
 
 interface Props {
   papers: Paper[];
+  /** Smaller titles, for the key papers at the end of each Research section. */
+  compact?: boolean;
 }
 
-const { papers } = Astro.props;
+const { papers, compact = false } = Astro.props;
+
+// Keep designations such as "KELT-9b", "TOI-1685 b" and "LHS 1903" on one line.
+const unbroken = (title: string) =>
+  title
+    .replace(/(?<=\w)-(?=\d)/g, '\u2011')
+    .replace(/ (?=\d|[b-h]\b)/g, '\u00a0');
 ---
 
-<ol class="papers">
+<ol class:list={['papers', { compact }]}>
   {
     papers.map((paper) => (
       <li>
         <p class="t">
-          <a href={paper.url}>{paper.title}</a>
+          <a href={paper.url}>{unbroken(paper.title)}</a>
         </p>
         <p class="m">
           {paper.authors} · <span class="j">{paper.journal}</span> · {paper.year}
-          {paper.firstAuthor && ' · first author'}
-          {paper.jointFirstAuthor && ' · joint first author'}
+          {paper.role && (
+            <Fragment>
+              · <span class="r">{paper.role}</span>
+            </Fragment>
+          )}
         </p>
       </li>
     ))

@@ -152,7 +152,7 @@ section.block {
   font-size: 0.78125rem; /* 12.5px */
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--mist);
 }
 
 .lead {
@@ -266,13 +266,12 @@ section.block {
 }
 
 .subnav a {
-  color: var(--mist);
-  text-decoration: none;
   padding-block: 2px;
+  text-decoration-color: rgba(227, 163, 94, 0.45);
 }
 
 .subnav a:hover {
-  color: var(--ink);
+  text-decoration-color: var(--amber);
 }
 
 /* ---------- Footer ---------- */
@@ -295,13 +294,18 @@ section.block {
   color: var(--ink);
 }
 
+.photo-credit {
+  flex-basis: 100%;
+  font-size: 0.8125rem;
+}
+
 /* ---------- Home ---------- */
 
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
   gap: 56px;
-  align-items: end;
+  align-items: start;
   padding-block: 40px 28px;
 }
 
@@ -361,20 +365,6 @@ section.block {
 }
 
 /* Full-width photographs between sections. */
-.band img {
-  width: 100%;
-  aspect-ratio: 21 / 9;
-  object-fit: cover;
-}
-
-.band figcaption {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--mist);
-  padding-top: 10px;
-}
-
 .cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -390,21 +380,6 @@ section.block {
   gap: 12px;
   align-content: start;
   min-width: 0;
-}
-
-.card-photo {
-  margin: -24px -24px 6px;
-}
-
-.card-photo img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 6px 6px 0 0;
-}
-
-.card-photo figcaption {
-  padding: 8px 24px 0;
 }
 
 .card h3 {
@@ -448,8 +423,18 @@ section.block {
   margin-top: 4px;
 }
 
-.papers .j {
-  color: var(--amber);
+/* Journal names and roles stay whole when the line wraps on a phone. */
+.papers .j,
+.papers .r {
+  white-space: nowrap;
+}
+
+.papers.compact {
+  gap: 14px;
+}
+
+.papers.compact .t {
+  font-size: 1.05rem;
 }
 
 .teaser {
@@ -611,14 +596,15 @@ section.block {
 
 .who {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-columns: minmax(0, 18.75rem) minmax(0, 1fr);
   gap: 48px;
   align-items: start;
 }
 
 .who img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-radius: 3px;
 }
 
@@ -658,11 +644,59 @@ section.block {
   border: 0;
 }
 
+/* Until it is played, a video is a link styled as a player. */
+.video-start {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 24px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  background: radial-gradient(circle at 50% 42%, #1b2a44 0%, var(--bg2) 62%);
+}
+
+.video-play {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--amber);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.video-play::before {
+  content: '';
+  margin-left: 5px;
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent var(--amber);
+}
+
+.video-start:hover .video-play,
+.video-start:focus-visible .video-play {
+  background: rgba(227, 163, 94, 0.14);
+}
+
+.video-title {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  max-width: 26rem;
+}
+
+.video-note {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--mist);
+}
+
 .course {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
   gap: 40px;
-  align-items: start;
 }
 
 .course-text {
@@ -682,7 +716,7 @@ section.block {
 .phase .when {
   font-family: var(--mono);
   font-size: 0.8125rem;
-  color: var(--amber);
+  color: var(--mist);
 }
 
 .phase h3 {
@@ -712,7 +746,7 @@ section.block {
 .steps .n {
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: var(--amber);
+  color: var(--mist);
 }
 
 .steps .s {
@@ -727,7 +761,11 @@ section.block {
   font-size: 0.96875rem; /* 15.5px */
 }
 
-/* A screenshot from a course notebook. */
+/* A plot from a course notebook. */
+.nb {
+  max-width: 46.375rem;
+}
+
 .nb img {
   width: 100%;
   border-radius: 4px;
@@ -758,7 +796,7 @@ dl.prac dt {
   font-size: 0.78125rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--mist);
   padding-top: 19px;
 }
 
@@ -848,7 +886,8 @@ form.enq .trap {
   line-height: 1.05;
 }
 
-/* Research: a plain-English opening to each section, then the detail. */
+/* Research: a plain-English opening to each section, then my part in it and the key papers,
+   with any picture in the right-hand column. */
 .research .intro {
   font-size: 1.22rem;
   line-height: 1.55;
@@ -867,6 +906,26 @@ form.enq .trap {
   gap: 28px;
 }
 
+.research .detail {
+  display: grid;
+  gap: 32px;
+  min-width: 0;
+}
+
+.key-papers {
+  display: grid;
+  gap: 14px;
+}
+
+.key-papers h3 {
+  font-family: var(--mono);
+  font-size: 0.78125rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
 .fig img {
   border-radius: 3px;
 }
@@ -877,20 +936,6 @@ form.enq .trap {
 
 .page-end {
   padding-bottom: 48px;
-}
-
-/* Scientific figures have white backgrounds; a thin frame keeps them tidy on the dark page. */
-.fig-light img {
-  background: #ffffff;
-  border: 1px solid var(--line);
-}
-
-.fig a.fig-link {
-  display: block;
-}
-
-.fig-wide {
-  max-width: 50rem;
 }
 
 .contact-email {
@@ -921,10 +966,6 @@ form.enq .trap {
     max-width: 20rem;
   }
 
-  .band img {
-    aspect-ratio: 4 / 3;
-  }
-
   .cards,
   .gains,
   .why,
@@ -937,16 +978,12 @@ form.enq .trap {
   }
 
   .who figure {
-    max-width: 22rem;
+    max-width: 18rem;
   }
 
   .phase {
     grid-template-columns: minmax(0, 1fr);
     gap: 8px;
-  }
-
-  .nb {
-    max-width: 24rem;
   }
 
   dl.prac dd {
@@ -956,7 +993,7 @@ form.enq .trap {
 
   .m-hero-media img {
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
   }
 
   .m-hero-media::after {

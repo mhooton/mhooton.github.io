@@ -1,16 +1,13 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import Band from '../components/Band.astro';
 import PaperList from '../components/PaperList.astro';
 import TransitStrip from '../components/TransitStrip.astro';
 import { ledPapers, paperCount } from '../data/publications';
 import { profiles } from '../data/site';
 import portrait from '../assets/photos/portrait-4x5.jpg';
-import ormSunset from '../assets/photos/orm-sunset-wht.jpg';
-import speculoosDusk from '../assets/photos/speculoos-dusk.jpg';
-import vlt from '../assets/photos/vlt.jpg';
 
+// Each card has the same title as the Research section it links to.
 const cards = [
   {
     title: 'How hot Jupiters arrived',
@@ -18,15 +15,14 @@ const cards = [
     href: '/research/#hot-jupiters',
   },
   {
-    title: 'A chain of resonant planets',
+    title: 'Small planets with JWST',
     text: 'TOI-178 has six planets, five of them locked in a chain of orbital resonances. My JWST observations of three of them test what their atmospheres are made of, and so where in the young system they formed.',
-    href: '/research/#resonant-planets',
+    href: '/research/#jwst',
   },
   {
     title: 'SPECULOOS',
     text: "Robotic telescopes searching for Earth-sized planets around the smallest, coolest stars. I develop the pipeline that turns each night's data into the measurements used to find them.",
     href: '/research/#speculoos',
-    photo: true,
   },
   {
     title: 'CHEOPS',
@@ -59,7 +55,7 @@ const cards = [
           <a href={profiles.github}>GitHub</a>
         </p>
       </div>
-      <figure class="portrait">
+      <div class="portrait">
         <Picture
           src={portrait}
           alt="Matthew Hooton"
@@ -68,42 +64,19 @@ const cards = [
           sizes="(max-width: 760px) min(20rem, calc(100vw - 40px)), (max-width: 1152px) 34vw, 400px"
           priority
         />
-        <figcaption class="cap">Photograph: Matthew Hooton.</figcaption>
-      </figure>
+      </div>
     </div>
     <div class="sig">
       <TransitStrip />
       <p>A transit: the brief dimming of a star as its planet passes in front. Illustrative data.</p>
     </div>
-  </div>
 
-  <Band
-    src={ormSunset}
-    alt="Sunset over the Roque de los Muchachos Observatory on La Palma, with the William Herschel Telescope's dome in the centre"
-  >
-    The William Herschel Telescope at sunset, from the Isaac Newton Telescope, La Palma.
-    Photograph: Matthew Hooton.
-  </Band>
-
-  <div class="wrap">
     <section class="block" aria-labelledby="research-h">
       <h2 id="research-h">Research</h2>
       <div class="cards">
         {
           cards.map((card) => (
             <article class="card">
-              {card.photo && (
-                <figure class="card-photo">
-                  <Picture
-                    src={speculoosDusk}
-                    alt="Three SPECULOOS telescope domes open at dusk in the Atacama Desert"
-                    formats={['avif', 'webp']}
-                    widths={[480, 640, 960, 1280]}
-                    sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1152px) 48vw, 560px"
-                  />
-                  <figcaption class="cap">SPECULOOS South, Chile. Photograph: Matthew Hooton.</figcaption>
-                </figure>
-              )}
               <h3>{card.title}</h3>
               <p>{card.text}</p>
               <a class="more" href={card.href}>
@@ -114,20 +87,10 @@ const cards = [
         }
       </div>
     </section>
-  </div>
 
-  <Band
-    src={vlt}
-    alt="The Very Large Telescope's unit telescopes catching low sunlight at Paranal"
-    position="50% 40%"
-  >
-    The Very Large Telescope, Paranal, Chile. Photograph: Matthew Hooton.
-  </Band>
-
-  <div class="wrap">
     <section class="block" aria-labelledby="papers-h">
-      <h2 id="papers-h">Selected papers</h2>
-      <PaperList papers={ledPapers.slice(0, 4)} />
+      <h2 id="papers-h">Papers I led</h2>
+      <PaperList papers={ledPapers} />
       <a class="more" href={profiles.ads}>All {paperCount} papers on NASA ADS</a>
     </section>
 

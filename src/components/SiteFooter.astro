@@ -15,13 +15,15 @@ const { variant = 'default' } = Astro.props;
       <span>
         <a href="/">Home</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a>
       </span>
+      <span class="photo-credit">Photographs by Matthew Hooton unless credited otherwise.</span>
     </footer>
   ) : (
     <footer class="site-footer">
       <span>Matthew Hooton · {emailText}</span>
       <span>
-        <a href={profiles.ads}>ADS</a> · <a href={profiles.orcid}>ORCID</a> · <a href={profiles.github}>GitHub</a> · <a href="/privacy/">Privacy</a>
+        <a href="/mentorship/">Mentorship</a> · <a href={profiles.ads}>ADS</a> · <a href={profiles.orcid}>ORCID</a> · <a href={profiles.github}>GitHub</a> · <a href="/privacy/">Privacy</a>
       </span>
+      <span class="photo-credit">Photographs by Matthew Hooton unless credited otherwise.</span>
     </footer>
   )
 }

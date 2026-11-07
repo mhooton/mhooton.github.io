@@ -1,11 +1,15 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
 import VideoEmbed from '../components/VideoEmbed.astro';
 import intAboveClouds from '../assets/photos/int-above-clouds.jpg';
-import talk from '../assets/photos/talk-exoplanets5.jpg';
+import portrait from '../assets/photos/portrait-4x5.jpg';
 import notebook from '../assets/figures/mentorship-colab.png';
+import notebookPlot from '../assets/figures/mentorship-colab-plot.png';
+
+// The whole notebook cell, code and plot, for the link under the cropped plot.
+const notebookFull = await getImage({ src: notebook, format: 'webp', quality: 90 });
 
 // The page's title, description and link preview never mention the university.
 const title = 'Exoplanet Research Mentorship · Dr Matthew Hooton';
@@ -34,7 +38,7 @@ const description =
     <div class="m-hero-text">
       <div class="wrap">
         <p class="eyebrow">Exoplanet Research Mentorship</p>
-        <h1>Discover a New Exoplanet</h1>
+        <h1>Discover a new exoplanet</h1>
         <p class="lead">
           My own independent online research course. NASA's TESS space telescope has flagged
           thousands of possible planets that no one has yet checked. Each student takes a set of
@@ -49,9 +53,10 @@ const description =
 
   <div class="wrap">
     <p class="credit">
-      Photograph: the Isaac Newton Telescope above the clouds, La Palma, by Matthew Hooton.
+      The Isaac Newton Telescope above the clouds, La Palma.
     </p>
     <nav class="subnav" aria-label="On this page">
+      <a href="#why-real">Why this is real research</a>
       <a href="#gains">What your student gains</a>
       <a href="#outcomes">Outcomes</a>
       <a href="#who-teaches">Who teaches</a>
@@ -59,6 +64,36 @@ const description =
       <a href="#practicalities">Practicalities</a>
       <a href="#enquire">Enquire</a>
     </nav>
+
+    <section class="block" id="why-real" aria-labelledby="why-h">
+      <div class="why">
+        <div class="why-text">
+          <h2 id="why-h">Why this is real research</h2>
+          <p>
+            An exoplanet is a planet that orbits a star other than the Sun. The first was found in
+            the 1990s. Most of the planets known today were found by watching for a small, regular
+            dimming of a star's light as a planet passes in front of it; a graph of the star's
+            brightness over time is called a light curve.
+          </p>
+          <p>
+            Since 2018, TESS has found almost 10,000 such signals. Each one is only a candidate until
+            it has been checked with further observations, because two stars orbiting each other
+            can produce a similar dimming. Fewer than half of these candidates have been checked,
+            because there are not enough astrophysicists to do it.
+          </p>
+        </div>
+        <figure>
+          <VideoEmbed
+            id="xNeRqbw18Jk"
+            title="ESA animation of a planet passing in front of its star, with the light curve traced out"
+          />
+          <figcaption class="cap">
+            A planet passing in front of its star, with the dip in starlight traced out as a light
+            curve. Source: ESA.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
     <section class="block" id="gains" aria-labelledby="gains-h">
       <h2 id="gains-h">What your student gains</h2>
@@ -95,8 +130,8 @@ const description =
     <section class="block" id="outcomes" aria-labelledby="outcomes-h">
       <h2 id="outcomes-h">Outcomes</h2>
       <p class="section-text">
-        I began teaching this course in late 2025. Papers from it have so far produced three journal
-        submissions and, in 2026,
+        I began teaching this course in late 2025. Students have so far submitted three papers to
+        journals, and in 2026 one had
         <a href="https://indico.global/event/16926/contributions/163975/">a poster selected for presentation at the Australian Institute of Physics Congress</a>,
         Australia's national physics conference. Former students have continued their research with
         me beyond the course, and one has entered a national science competition with that work.
@@ -116,13 +151,12 @@ const description =
       <div class="who">
         <figure>
           <Picture
-            src={talk}
-            alt="Matthew Hooton presenting JWST results on stage at the Exoplanets 5 conference"
+            src={portrait}
+            alt="Matthew Hooton"
             formats={['avif', 'webp']}
-            widths={[480, 720, 960, 1280, 1600]}
-            sizes="(max-width: 760px) min(22rem, calc(100vw - 40px)), (max-width: 1152px) 55vw, 620px"
+            widths={[320, 480, 640, 960]}
+            sizes="(max-width: 760px) min(18rem, calc(100vw - 40px)), 300px"
           />
-          <figcaption class="cap">Presenting JWST results at Exoplanets 5, Leiden, 2024.</figcaption>
         </figure>
         <div class="who-text">
           <h2 id="who-h">Who teaches</h2>
@@ -130,7 +164,7 @@ const description =
             I am an astrophysicist at the University of Cambridge, in the group of Professor Didier
             Queloz, who shared the 2019 Nobel Prize in Physics for discovering the first planet
             orbiting a star like the Sun. I lead a programme of observations with the James Webb
-            Space Telescope, am on the science team of the CHEOPS space telescope, supervise a PhD
+            Space Telescope, am on the science team of the CHEOPS space telescope, co-supervise a PhD
             student, and have published more than 80 papers, including in <i>Nature</i> and
             <i>Science</i>.
           </p>
@@ -142,35 +176,6 @@ const description =
       </div>
     </section>
 
-    <section class="block" id="why-real" aria-labelledby="why-h">
-      <div class="why">
-        <div class="why-text">
-          <h2 id="why-h">Why this is real research</h2>
-          <p>
-            An exoplanet is a planet that orbits a star other than the Sun. The first was found in
-            the 1990s. Most of the planets known today were found by watching for a small, regular
-            dimming of a star's light as a planet passes in front of it; a graph of the star's
-            brightness over time is called a light curve.
-          </p>
-          <p>
-            Since 2018, TESS has found almost 10,000 such signals. Each one is only a candidate until
-            it has been checked with further observations, because two stars orbiting each other
-            can produce a similar dimming. Fewer than half of these candidates have been checked,
-            because there are not enough astrophysicists to do it.
-          </p>
-        </div>
-        <figure>
-          <VideoEmbed
-            id="xNeRqbw18Jk"
-            title="ESA animation of a planet passing in front of its star, with the light curve traced out"
-          />
-          <figcaption class="cap">
-            A planet passing in front of its star, with the dip in starlight traced out as a light
-            curve. Source: ESA.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
 
     <section class="block" id="course" aria-labelledby="course-h">
       <h2 id="course-h">The course</h2>
@@ -226,16 +231,17 @@ const description =
         </div>
         <figure class="nb">
           <Picture
-            src={notebook}
-            alt="A course notebook in Google Colab, with Python code and the plot it produces"
+            src={notebookPlot}
+            alt="A plot from a course notebook: transit light curves that get longer as the planet's orbit gets wider"
             formats={['webp']}
             quality={90}
-            widths={[400, 600, 795]}
-            sizes="(max-width: 760px) min(24rem, calc(100vw - 40px)), 360px"
+            widths={[400, 600, 742]}
+            sizes="(max-width: 760px) calc(100vw - 40px), 742px"
           />
           <figcaption class="cap">
             From a course notebook: how a planet's distance from its star changes the length of its
-            transit. The Python code above makes the plot.
+            transit. <a href={notebookFull.src}>See the whole notebook cell</a>, with the Python code
+            that makes the plot.
           </figcaption>
         </figure>
       </div>

@@ -1,6 +1,7 @@
 ---
-// A YouTube video in privacy-enhanced mode (youtube-nocookie.com), loaded only when it
-// scrolls near the viewport.
+// A YouTube video that loads nothing from YouTube until someone presses play. It starts as a
+// link to the video, styled as a player; a click swaps in the privacy-enhanced player
+// (youtube-nocookie.com). Without JavaScript the link opens the video on YouTube.
 interface Props {
   id: string;
   title: string;
@@ -10,11 +11,32 @@ const { id, title } = Astro.props;
 ---
 
 <div class="video-frame">
-  <iframe
-    src={`https://www.youtube-nocookie.com/embed/${id}`}
-    title={title}
-    loading="lazy"
-    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen></iframe>
+  <a
+    class="video-start"
+    href={`https://www.youtube.com/watch?v=${id}`}
+    data-embed={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1`}
+    data-title={title}
+  >
+    <span class="video-play" aria-hidden="true"></span>
+    <span class="video-title"><span class="sr-only">Play video: </span>{title}</span>
+    <span class="video-note">Plays from YouTube</span>
+  </a>
 </div>
+
+<script>
+  for (const link of document.querySelectorAll<HTMLAnchorElement>('a.video-start')) {
+    link.addEventListener('click', (event) => {
+      const { embed, title } = link.dataset;
+      if (!embed) return;
+      event.preventDefault();
+      const player = document.createElement('iframe');
+      player.src = embed;
+      player.title = title ?? '';
+      player.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
+      player.referrerPolicy = 'strict-origin-when-cross-origin';
+      player.allowFullscreen = true;
+      link.replaceWith(player);
+      player.focus();
+    });
+  }
+</script>

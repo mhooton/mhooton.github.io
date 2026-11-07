@@ -1,13 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import PaperList from '../components/PaperList.astro';
-import { ledPapers, selectedCollaborations } from '../data/publications';
+import { ledPapers, secondAuthorPapers, selectedCollaborations } from '../data/publications';
 import { profiles } from '../data/site';
 ---
 
 <Base
   title="Publications · Dr Matthew Hooton"
-  description="Papers led or co-led by Dr Matthew Hooton, and selected collaborations, with links to his full publication list on NASA ADS."
+  description="Papers by Dr Matthew Hooton: those he led, those on which he is second author, and selected collaborations, with a link to his full list on NASA ADS."
 >
   <div class="wrap">
     <header class="page-head">
@@ -15,12 +15,18 @@ import { profiles } from '../data/site';
     </header>
 
     <section class="block" aria-labelledby="led-h">
-      <h2 id="led-h">Papers I led or co-led</h2>
+      <h2 id="led-h">Papers I led</h2>
       <PaperList papers={ledPapers} />
+    </section>
+
+    <section class="block" aria-labelledby="second-h">
+      <h2 id="second-h">Second-author papers</h2>
+      <PaperList papers={secondAuthorPapers} />
     </section>
 
     <section class="block" aria-labelledby="collab-h">
       <h2 id="collab-h">Selected collaborations</h2>
+      <p class="section-text">Papers from larger teams, on which I am a co-author.</p>
       <PaperList papers={selectedCollaborations} />
     </section>
 

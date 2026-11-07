@@ -5,7 +5,7 @@ export const siteName = 'Dr Matthew Hooton';
 // Shown as text only, never as a mailto link.
 export const emailText = 'mh2143 [at] cam.ac.uk';
 
-// Both forms post here. The hidden _subject field tells the two apart in the inbox.
+// Both forms post here. The hidden subject field tells the two apart in the inbox.
 export const formEndpoint = 'https://formspree.io/f/mjglegwj';
 
 export const profiles = {
@@ -15,9 +15,10 @@ export const profiles = {
   github: 'https://github.com/mhooton',
 };
 
+// Mentorship is left out of the main menu, which is for the academic pages. Families reach it
+// directly, and it is linked from Home, Research and the footer.
 export const nav = [
   { href: '/research/', label: 'Research' },
   { href: '/publications/', label: 'Publications' },
-  { href: '/mentorship/', label: 'Mentorship' },
   { href: '/contact/', label: 'Contact' },
 ] as const;

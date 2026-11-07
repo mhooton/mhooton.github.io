@@ -192,11 +192,6 @@ section.block {
   font-size: 0.9375rem;
 }
 
-.note {
-  color: var(--mist);
-  max-width: 52rem;
-}
-
 /* Running text on Research and Privacy. */
 .prose {
   max-width: 42rem;
@@ -597,34 +592,21 @@ section.block {
   font-size: 1.06rem;
 }
 
-.outputs {
-  list-style: none;
+.section-text {
+  max-width: 46rem;
+}
+
+/* A quotation from a former student, set like the mock-up's .proof style. */
+.quote blockquote {
   margin: 0;
-  padding: 0;
   max-width: 52rem;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.85rem);
+  line-height: 1.45;
 }
 
-.outputs li {
-  display: grid;
-  grid-template-columns: 7rem 11rem minmax(0, 1fr);
-  gap: 16px;
-  border-top: 1px solid var(--line);
-  padding-block: 14px;
-}
-
-.outputs li:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.outputs .when {
-  font-family: var(--mono);
-  font-size: 0.8125rem;
-  color: var(--amber);
-  padding-top: 2px;
-}
-
-.outputs .what {
-  font-weight: 600;
+.quote figcaption {
+  padding-top: 12px;
 }
 
 .who {
@@ -960,11 +942,6 @@ form.enq .trap {
 
   .who figure {
     max-width: 22rem;
-  }
-
-  .outputs li {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2px;
   }
 
   .phase {

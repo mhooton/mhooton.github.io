@@ -1,0 +1,15 @@
+---
+import { nav } from '../data/site';
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => path === href || `${path}/` === href;
+---
+
+<header class="site-header">
+  <a class="brand" href="/">Matthew Hooton</a>
+  <nav class="nav" aria-label="Site">
+    {nav.map(({ href, label }) => (
+      <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
+    ))}
+  </nav>
+</header>

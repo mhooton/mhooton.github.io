@@ -1,0 +1,27 @@
+---
+import { emailText, profiles } from '../data/site';
+
+interface Props {
+  variant?: 'default' | 'mentorship';
+}
+
+const { variant = 'default' } = Astro.props;
+---
+
+{
+  variant === 'mentorship' ? (
+    <footer class="site-footer mentor-footer">
+      <span class="indep">Exoplanet Research Mentorship is offered privately by Dr Matthew Hooton.</span>
+      <span>
+        <a href="/">Home</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a>
+      </span>
+    </footer>
+  ) : (
+    <footer class="site-footer">
+      <span>Matthew Hooton · {emailText}</span>
+      <span>
+        <a href={profiles.ads}>ADS</a> · <a href={profiles.orcid}>ORCID</a> · <a href={profiles.github}>GitHub</a> · <a href="/privacy/">Privacy</a>
+      </span>
+    </footer>
+  )
+}

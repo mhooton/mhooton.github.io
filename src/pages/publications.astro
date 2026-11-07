@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import PaperList from '../components/PaperList.astro';
+import { ledPapers, selectedCollaborations } from '../data/publications';
+import { profiles } from '../data/site';
+---
+
+<Base
+  title="Publications · Dr Matthew Hooton"
+  description="Papers led or co-led by Dr Matthew Hooton, and selected collaborations, with links to his full publication list on NASA ADS."
+>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Publications</h1>
+    </header>
+
+    <section class="block" aria-labelledby="led-h">
+      <h2 id="led-h">Papers I led or co-led</h2>
+      <PaperList papers={ledPapers} />
+    </section>
+
+    <section class="block" aria-labelledby="collab-h">
+      <h2 id="collab-h">Selected collaborations</h2>
+      <PaperList papers={selectedCollaborations} />
+    </section>
+
+    <p class="links page-end">
+      <a href={profiles.ads}>All my papers on NASA ADS</a>
+      <a href={profiles.orcid}>ORCID</a>
+    </p>
+  </div>
+</Base>

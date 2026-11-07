@@ -1,0 +1,59 @@
+---
+// The mentorship enquiry form. Posts to Formspree; the hidden "subject" field sets the
+// subject line of the email (Formspree's current name for the old "_subject").
+import FormEnhance from './FormEnhance.astro';
+import { formEndpoint } from '../data/site';
+---
+
+<form
+  class="enq"
+  action={formEndpoint}
+  method="POST"
+  data-enhance
+  data-thanks="Thank you. Your enquiry has been sent, and I'll reply within 48 hours."
+>
+  <input type="hidden" name="subject" value="Mentorship enquiry" />
+  <label for="enq-name">
+    Your name
+    <input id="enq-name" type="text" name="name" autocomplete="name" required />
+  </label>
+  <label for="enq-email">
+    Your email
+    <input id="enq-email" name="email" type="email" autocomplete="email" required />
+  </label>
+  <label for="enq-year">
+    Student's school year
+    <input id="enq-year" type="text" name="school_year" placeholder="e.g. Grade 11" />
+  </label>
+  <label for="enq-tz">
+    Country or time zone
+    <input id="enq-tz" type="text" name="country_or_time_zone" />
+  </label>
+  <label for="enq-code">
+    Coding experience
+    <select id="enq-code" name="coding_experience">
+      <option>None yet</option>
+      <option>Some Python</option>
+      <option>Comfortable with Python</option>
+    </select>
+  </label>
+  <label for="enq-heard">
+    How did you hear about the course?
+    <input id="enq-heard" type="text" name="heard_about_course" />
+  </label>
+  <label class="full" for="enq-msg">
+    Anything else you'd like me to know
+    <textarea id="enq-msg" name="message" rows="4"></textarea>
+  </label>
+  <div class="trap">
+    <label for="enq-gotcha">Leave this field empty</label>
+    <input id="enq-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+  </div>
+  <div class="row">
+    <button class="btn" type="submit">Send enquiry</button>
+    <p class="formnote" role="status" data-status></p>
+  </div>
+  <p class="formnote full">The <a href="/privacy/">privacy notice</a> explains how your details are used.</p>
+</form>
+
+<FormEnhance />

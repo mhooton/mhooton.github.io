@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { emailText } from '../data/site';
+---
+
+<Base
+  title="Contact · Dr Matthew Hooton"
+  description="Email address and contact form for Dr Matthew Hooton."
+>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Contact</h1>
+    </header>
+
+    <section class="block" aria-labelledby="email-h">
+      <div>
+        <h2 id="email-h" class="sr-only">Email</h2>
+        <p class="contact-email">{emailText}</p>
+      </div>
+      <p class="form-intro">
+        You can email me at this address, or send a message with the form below. For mentorship
+        enquiries, please use the <a href="/mentorship/#enquire">form on the Mentorship page</a>.
+      </p>
+      <ContactForm />
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,23 @@
+name: Check that the site builds
+
+# Builds every pull request into master, so a broken build shows up before it can reach the
+# live site. Nothing is deployed from here.
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+      - run: npm run build

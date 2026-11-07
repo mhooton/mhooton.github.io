@@ -1,0 +1,142 @@
+---
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Band from '../components/Band.astro';
+import PaperList from '../components/PaperList.astro';
+import TransitStrip from '../components/TransitStrip.astro';
+import { ledPapers, paperCount } from '../data/publications';
+import { profiles } from '../data/site';
+import portrait from '../assets/photos/portrait-4x5.jpg';
+import ormSunset from '../assets/photos/orm-sunset-wht.jpg';
+import speculoosDusk from '../assets/photos/speculoos-dusk.jpg';
+import vlt from '../assets/photos/vlt.jpg';
+
+const cards = [
+  {
+    title: 'How hot Jupiters arrived',
+    text: 'Giant planets that orbit closer to their stars than Mercury does to the Sun probably formed further out and moved inwards. I measure how tilted their orbits are, from the shapes of their transits across fast-spinning stars, to test how that happened.',
+    href: '/research/#hot-jupiters',
+  },
+  {
+    title: 'A chain of resonant planets',
+    text: 'TOI-178 has six planets, five of them locked in a chain of orbital resonances. My JWST observations of three of them test what their atmospheres are made of, and so where in the young system they formed.',
+    href: '/research/#resonant-planets',
+  },
+  {
+    title: 'SPECULOOS',
+    text: "Robotic telescopes searching for Earth-sized planets around the smallest, coolest stars. I develop the pipeline that turns each night's data into the measurements used to find them.",
+    href: '/research/#speculoos',
+    photo: true,
+  },
+  {
+    title: 'CHEOPS',
+    text: "ESA's space telescope for measuring the sizes of known planets precisely. I'm on its science team, and I led its largest programme, refining the sizes of planets in multi-planet systems.",
+    href: '/research/#cheops',
+  },
+];
+---
+
+<Base
+  title="Dr Matthew Hooton · Astrophysicist"
+  description="Exoplanet researcher and educator at the University of Cambridge"
+>
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Astrophysicist · Cavendish Laboratory, University of Cambridge</p>
+        <h1>Dr Matthew Hooton</h1>
+        <p class="lead">
+          I study how planets around other stars formed, and how they came to be where we find
+          them today.
+        </p>
+        <p class="lead lead-quiet">
+          I work in Didier Queloz's group, using telescopes in space and on the ground.
+        </p>
+        <p class="links">
+          <a href={profiles.ads}>NASA ADS</a>
+          <a href={profiles.orcid}>ORCID</a>
+          <a href={profiles.scholar}>Google Scholar</a>
+          <a href={profiles.github}>GitHub</a>
+        </p>
+      </div>
+      <figure class="portrait">
+        <Picture
+          src={portrait}
+          alt="Matthew Hooton"
+          formats={['avif', 'webp']}
+          widths={[320, 480, 640, 960, 1280]}
+          sizes="(max-width: 760px) min(20rem, calc(100vw - 40px)), (max-width: 1152px) 34vw, 400px"
+          priority
+        />
+        <figcaption class="cap">Photograph: Matthew Hooton.</figcaption>
+      </figure>
+    </div>
+    <div class="sig">
+      <TransitStrip />
+      <p>A transit: the brief dimming of a star as its planet passes in front. Illustrative data.</p>
+    </div>
+  </div>
+
+  <Band
+    src={ormSunset}
+    alt="Sunset over the Roque de los Muchachos Observatory on La Palma, with the William Herschel Telescope's dome in the centre"
+  >
+    The William Herschel Telescope at sunset, from the Isaac Newton Telescope, La Palma.
+    Photograph: Matthew Hooton.
+  </Band>
+
+  <div class="wrap">
+    <section class="block" aria-labelledby="research-h">
+      <h2 id="research-h">Research</h2>
+      <div class="cards">
+        {
+          cards.map((card) => (
+            <article class="card">
+              {card.photo && (
+                <figure class="card-photo">
+                  <Picture
+                    src={speculoosDusk}
+                    alt="Three SPECULOOS telescope domes open at dusk in the Atacama Desert"
+                    formats={['avif', 'webp']}
+                    widths={[480, 640, 960, 1280]}
+                    sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1152px) 48vw, 560px"
+                  />
+                  <figcaption class="cap">SPECULOOS South, Chile. Photograph: Matthew Hooton.</figcaption>
+                </figure>
+              )}
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+              <a class="more" href={card.href}>
+                More on this<span class="sr-only">: {card.title}</span>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+
+  <Band
+    src={vlt}
+    alt="The Very Large Telescope's unit telescopes catching low sunlight at Paranal"
+    position="50% 40%"
+  >
+    The Very Large Telescope, Paranal, Chile. Photograph: Matthew Hooton.
+  </Band>
+
+  <div class="wrap">
+    <section class="block" aria-labelledby="papers-h">
+      <h2 id="papers-h">Selected papers</h2>
+      <PaperList papers={ledPapers.slice(0, 4)} />
+      <a class="more" href={profiles.ads}>All {paperCount} papers on NASA ADS</a>
+    </section>
+
+    <div class="teaser">
+      <p>
+        I also teach an independent research course for school students, in which they search
+        real NASA data for a new planet.
+      </p>
+      <a class="more" href="/mentorship/">Exoplanet Research Mentorship</a>
+    </div>
+  </div>
+</Base>
